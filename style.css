@@ -44,7 +44,7 @@ body {
 
 /* Kurangin lebar search box jadi 60% (dikurangin 40%) */
 #search {
-  flex: 0 0 60%; /* Dikurangin 40% dari lebar penuh */
+  flex: 10 10 70%; /* Dikurangin 40% dari lebar penuh */
 }
 
 /* ========================= GRID PRODUK (2 KOLOM UNTUK SEMUA DEVICE) ========================= */
