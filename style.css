@@ -19,9 +19,10 @@ body {
 h1 {
     width: 100%;
     font-size: 34px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     padding-bottom: 12px;
     border-bottom: 2px solid #eee;
+    text-align: center;
 }
 
 /* =========================
@@ -30,57 +31,61 @@ h1 {
 .toolbar {
     display: flex;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 #search {
     flex: 1;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 8px;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 10px;
     border: 1px solid #ccc;
 }
 
 #sortHarga {
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 8px;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 10px;
     border: 1px solid #ccc;
 }
 
 /* =========================
    GRID PRODUK
+   DESKTOP DEFAULT
 ========================= */
 #produk-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr); /* desktop */
+    gap: 18px;
 }
 
+/* =========================
+   CARD PRODUK
+========================= */
 .produk {
     background: #fff;
     border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 12px;
+    border-radius: 14px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .produk img {
     width: 100%;
-    hero-subight: 180px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .produk h3 {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
 }
 
 .produk p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #e60023;
     margin: 0;
@@ -92,9 +97,9 @@ h1 {
     background: #ee4d2d;
     color: #fff;
     text-decoration: none;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 .produk a:hover {
@@ -105,17 +110,17 @@ h1 {
    PAGINATION
 ========================= */
 #pagination {
-    margin-top: 32px;
+    margin-top: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
 }
 
 #pagination button {
-    padding: 10px 16px;
-    font-size: 14px;
-    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 10px;
     border: 1px solid #ccc;
     background: #fff;
     cursor: pointer;
@@ -127,11 +132,20 @@ h1 {
 }
 
 #pageInfo {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* =========================
-   MOBILE OPTIMIZATION
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+    #produk-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================
+   MOBILE (FIX 2 KOLOM)
 ========================= */
 @media (max-width: 768px) {
 
@@ -140,8 +154,7 @@ h1 {
     }
 
     h1 {
-        font-size: 34px;
-        text-align: center;
+        font-size: 28px;
     }
 
     .toolbar {
@@ -151,37 +164,51 @@ h1 {
     #search,
     #sortHarga {
         width: 100%;
-        font-size: 18px;
-        padding: 16px;
-    }
-
-    #produk-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .produk img {
-        height: 200px;
-    }
-
-    .produk h3 {
-        font-size: 16px;
-    }
-
-    .produk p {
-        font-size: 16px;
-    }
-
-    .produk a {
         font-size: 16px;
         padding: 14px;
     }
 
-    #pagination button {
-        font-size: 16px;
-        padding: 14px 20px;
+    /* 🔥 INI YANG PENTING */
+    #produk-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
-    #pageInfo {
-        font-size: 16px;
+    .produk {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .produk img {
+        height: 160px;
+    }
+
+    .produk h3 {
+        font-size: 14px;
+    }
+
+    .produk p {
+        font-size: 14px;
+    }
+
+    .produk a {
+        font-size: 14px;
+        padding: 12px;
+        border-radius: 8px;
+    }
+}
+
+/* =========================
+   EXTRA SMALL (HP KECIL)
+   MASIH 2 KOLOM
+========================= */
+@media (max-width: 480px) {
+    #produk-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .produk img {
+        height: 140px;
     }
 }
