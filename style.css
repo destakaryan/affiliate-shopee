@@ -149,6 +149,14 @@ body {
     padding: 14px;
   }
 
+  .hero h1 {
+    font-size: 48px; /* Tetap besar di mobile */
+  }
+
+  .hero-sub {
+    font-size: 24px; /* Tetap besar di mobile */
+  }
+
   .toolbar {
     flex-direction: column;
   }
@@ -156,6 +164,8 @@ body {
   #search,
   #sortHarga {
     width: 100%;
+    padding: 24px; /* Tetap 2x lebih tinggi */
+    font-size: 28px; /* Tetap 2x lebih besar */
   }
 
   #produk-list {
@@ -164,39 +174,70 @@ body {
   }
 
   .produk img {
-    height: 180px;
+    height: 200px; /* Diperbesar dari 180px */
   }
 
   .produk h3 {
-    font-size: 26px; /* 2x dari 13px */
+    font-size: 24px; /* 2x dari original 12px mobile */
   }
 
   .produk p {
-    font-size: 28px; /* 2x dari 14px */
+    font-size: 28px; /* 2x dari original 14px mobile */
+  }
+
+  .produk a {
+    padding: 24px; /* 2x tinggi tombol */
+    font-size: 26px; /* 2x teks tombol */
+  }
+
+  #pagination button {
+    padding: 20px 28px;
+    font-size: 26px;
+  }
+
+  #pagination #pageInfo {
+    font-size: 24px;
   }
 }
 
 /* ========================= EXTRA SMALL (IPHONE MINI) TETAP 2 KOLOM ========================= */
 @media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-sub {
+    font-size: 22px;
+  }
+
   #produk-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
 
   .produk img {
-    height: 150px;
+    height: 170px; /* Diperbesar dari 150px */
   }
 
   .produk h3 {
-    font-size: 24px; /* 2x dari 12px */
+    font-size: 22px; /* 2x lebih besar */
   }
 
   .produk p {
-    font-size: 26px; /* 2x dari 13px */
+    font-size: 26px; /* 2x lebih besar */
   }
 
   .produk a {
-    padding: 20px; /* 2x dari 10px */
-    font-size: 26px; /* 2x dari 13px */
+    padding: 22px; /* 2x tinggi tombol */
+    font-size: 24px; /* 2x teks tombol */
+  }
+
+  #pagination button {
+    padding: 18px 24px;
+    font-size: 24px;
+  }
+
+  #pagination #pageInfo {
+    font-size: 22px;
   }
 }
