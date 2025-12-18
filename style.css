@@ -42,8 +42,9 @@ body {
   border: 1px solid #ccc;
 }
 
+/* Kurangin lebar search box jadi 60% (dikurangin 40%) */
 #search {
-  flex: 1;
+  flex: 0 0 60%; /* Dikurangin 40% dari lebar penuh */
 }
 
 /* ========================= GRID PRODUK (2 KOLOM UNTUK SEMUA DEVICE) ========================= */
@@ -161,6 +162,7 @@ body {
     flex-direction: column;
   }
 
+  /* Di mobile tetap full width karena layout vertical */
   #search,
   #sortHarga {
     width: 100%;
