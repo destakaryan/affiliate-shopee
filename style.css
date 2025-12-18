@@ -14,49 +14,51 @@ body {
 }
 
 /* =========================
-   HEADER / JUDUL
+   HEADER / HERO
 ========================= */
-h1 {
-    width: 100%;
-    font-size: 34px;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #eee;
+.hero {
     text-align: center;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.hero-sub {
+    font-size: 14px;
+    color: #666;
 }
 
 /* =========================
-   TOOLBAR (SEARCH + SORT)
+   TOOLBAR
 ========================= */
 .toolbar {
     display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+#search,
+#sortHarga {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
 #search {
     flex: 1;
-    padding: 16px;
-    font-size: 18px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
-#sortHarga {
-    padding: 16px;
-    font-size: 18px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
 }
 
 /* =========================
-   GRID PRODUK
-   DESKTOP DEFAULT
+   GRID PRODUK (DEFAULT)
 ========================= */
 #produk-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* desktop */
-    gap: 18px;
+    grid-template-columns: repeat(4, 1fr); /* desktop */
+    gap: 16px;
 }
 
 /* =========================
@@ -64,31 +66,30 @@ h1 {
 ========================= */
 .produk {
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 14px;
-    padding: 14px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
 }
 
 .produk img {
     width: 100%;
-    height: 220px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .produk h3 {
-    font-size: 16px;
-    margin: 0;
+    font-size: 13px;
+    margin: 8px 0 4px;
 }
 
 .produk p {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: #e60023;
-    margin: 0;
+    margin: 0 0 8px;
 }
 
 .produk a {
@@ -97,64 +98,51 @@ h1 {
     background: #ee4d2d;
     color: #fff;
     text-decoration: none;
-    padding: 14px;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-.produk a:hover {
-    opacity: 0.9;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
 }
 
 /* =========================
    PAGINATION
 ========================= */
 #pagination {
-    margin-top: 28px;
+    margin: 24px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 #pagination button {
-    padding: 14px 20px;
-    font-size: 16px;
-    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     background: #fff;
-    cursor: pointer;
 }
 
 #pagination button:disabled {
     opacity: 0.5;
-    cursor: not-allowed;
-}
-
-#pageInfo {
-    font-size: 16px;
 }
 
 /* =========================
    TABLET
 ========================= */
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     #produk-list {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* =========================
-   MOBILE (FIX 2 KOLOM)
+   🔥 MOBILE HARD LOCK
+   2 KOLOM (ANTI OVERRIDE)
 ========================= */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     body {
-        padding: 16px;
-    }
-
-    h1 {
-        font-size: 28px;
+        padding: 14px;
     }
 
     .toolbar {
@@ -164,51 +152,32 @@ h1 {
     #search,
     #sortHarga {
         width: 100%;
-        font-size: 16px;
-        padding: 14px;
     }
 
-    /* 🔥 INI YANG PENTING */
+    /* ⛔ KUNCI TOTAL */
     #produk-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .produk {
-        padding: 12px;
-        border-radius: 12px;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+        width: 100% !important;
     }
 
     .produk img {
-        height: 160px;
-    }
-
-    .produk h3 {
-        font-size: 14px;
-    }
-
-    .produk p {
-        font-size: 14px;
-    }
-
-    .produk a {
-        font-size: 14px;
-        padding: 12px;
-        border-radius: 8px;
+        height: 150px;
     }
 }
 
 /* =========================
-   EXTRA SMALL (HP KECIL)
-   MASIH 2 KOLOM
+   EXTRA SMALL (IPHONE MINI)
+   TETAP 2 KOLOM
 ========================= */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     #produk-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
     }
 
     .produk img {
-        height: 140px;
+        height: 135px;
     }
 }
