@@ -18,12 +18,12 @@ body {
 }
 
 .hero h1 {
-  font-size: 28px;
-  margin-bottom: 6px;
+  font-size: 56px; /* 2x dari 28px */
+  margin-bottom: 12px;
 }
 
 .hero-sub {
-  font-size: 14px;
+  font-size: 28px; /* 2x dari 14px */
   color: #666;
 }
 
@@ -36,8 +36,8 @@ body {
 
 #search,
 #sortHarga {
-  padding: 12px;
-  font-size: 14px;
+  padding: 24px; /* 2x dari 12px - tinggi input 2x lebih besar */
+  font-size: 28px; /* 2x dari 14px - teks 2x lebih besar */
   border-radius: 8px;
   border: 1px solid #ccc;
 }
@@ -49,10 +49,10 @@ body {
 /* ========================= GRID PRODUK (2 KOLOM UNTUK SEMUA DEVICE) ========================= */
 #produk-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Ubah dari 4 ke 2 kolom untuk desktop */
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  max-width: 1200px; /* Tambah max-width agar tidak terlalu lebar di layar besar */
-  margin: 0 auto; /* Center grid */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ========================= CARD PRODUK ========================= */
@@ -67,18 +67,18 @@ body {
 
 .produk img {
   width: 100%;
-  height: 250px; /* Naikin dari 180px ke 250px biar tidak terlalu kecil */
+  height: 250px;
   object-fit: cover;
   border-radius: 10px;
 }
 
 .produk h3 {
-  font-size: 14px; /* Naikin sedikit dari 13px */
+  font-size: 28px; /* 2x dari 14px - nama produk 2x lebih besar */
   margin: 8px 0 4px;
 }
 
 .produk p {
-  font-size: 16px; /* Naikin dari 14px */
+  font-size: 32px; /* 2x dari 16px - harga 2x lebih besar */
   font-weight: bold;
   color: #e60023;
   margin: 0 0 8px;
@@ -90,14 +90,14 @@ body {
   background: #ee4d2d;
   color: #fff;
   text-decoration: none;
-  padding: 12px; /* Naikin dari 10px */
+  padding: 24px; /* 2x dari 12px - tinggi tombol 2x lebih besar */
   border-radius: 8px;
-  font-size: 14px; /* Naikin dari 13px */
+  font-size: 28px; /* 2x dari 14px - teks tombol 2x lebih besar */
   font-weight: 600;
 }
 
 .produk a:hover {
-  background: #d43d1a; /* Tambah hover effect */
+  background: #d43d1a;
 }
 
 /* ========================= PAGINATION ========================= */
@@ -110,8 +110,8 @@ body {
 }
 
 #pagination button {
-  padding: 10px 16px; /* Naikin sedikit */
-  font-size: 14px;
+  padding: 20px 32px; /* 2x dari 10px 16px - tinggi tombol pagination 2x lebih besar */
+  font-size: 28px; /* 2x dari 14px - teks pagination 2x lebih besar */
   border-radius: 8px;
   border: 1px solid #ccc;
   background: #fff;
@@ -119,7 +119,7 @@ body {
 }
 
 #pagination button:hover:not(:disabled) {
-  background: #f5f5f5; /* Tambah hover effect */
+  background: #f5f5f5;
 }
 
 #pagination button:disabled {
@@ -127,15 +127,19 @@ body {
   cursor: not-allowed;
 }
 
+#pagination #pageInfo {
+  font-size: 28px; /* 2x lebih besar untuk info halaman */
+}
+
 /* ========================= TABLET - TETAP 2 KOLOM ========================= */
 @media screen and (max-width: 1024px) {
   #produk-list {
-    grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom */
+    grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
 
   .produk img {
-    height: 220px; /* Sesuaikan tinggi untuk tablet */
+    height: 220px;
   }
 }
 
@@ -155,20 +159,20 @@ body {
   }
 
   #produk-list {
-    grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom */
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
   .produk img {
-    height: 180px; /* Sesuaikan untuk mobile */
+    height: 180px;
   }
 
   .produk h3 {
-    font-size: 13px;
+    font-size: 26px; /* 2x dari 13px */
   }
 
   .produk p {
-    font-size: 14px;
+    font-size: 28px; /* 2x dari 14px */
   }
 }
 
@@ -184,15 +188,15 @@ body {
   }
 
   .produk h3 {
-    font-size: 12px;
+    font-size: 24px; /* 2x dari 12px */
   }
 
   .produk p {
-    font-size: 13px;
+    font-size: 26px; /* 2x dari 13px */
   }
 
   .produk a {
-    padding: 10px;
-    font-size: 13px;
+    padding: 20px; /* 2x dari 10px */
+    font-size: 26px; /* 2x dari 13px */
   }
 }
