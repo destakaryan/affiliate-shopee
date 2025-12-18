@@ -1,163 +1,198 @@
 /* ========================= RESET & GLOBAL ========================= */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fafafa;
-    padding: 20px;
-    color: #222;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  padding: 20px;
+  color: #222;
 }
 
 /* ========================= HEADER / HERO ========================= */
 .hero {
-    text-align: center;
-    margin-bottom: 16px;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .hero h1 {
-    font-size: 28px;
-    margin-bottom: 6px;
+  font-size: 28px;
+  margin-bottom: 6px;
 }
 
 .hero-sub {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
 
 /* ========================= TOOLBAR ========================= */
 .toolbar {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
 #search,
 #sortHarga {
-    padding: 12px;
-    font-size: 14px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 #search {
-    flex: 1;
+  flex: 1;
 }
 
-/* ========================= GRID PRODUK (DEFAULT) ========================= */
+/* ========================= GRID PRODUK (2 KOLOM UNTUK SEMUA DEVICE) ========================= */
 #produk-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* desktop */
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Ubah dari 4 ke 2 kolom untuk desktop */
+  gap: 16px;
+  max-width: 1200px; /* Tambah max-width agar tidak terlalu lebar di layar besar */
+  margin: 0 auto; /* Center grid */
 }
 
 /* ========================= CARD PRODUK ========================= */
 .produk {
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .produk img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 250px; /* Naikin dari 180px ke 250px biar tidak terlalu kecil */
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .produk h3 {
-    font-size: 13px;
-    margin: 8px 0 4px;
+  font-size: 14px; /* Naikin sedikit dari 13px */
+  margin: 8px 0 4px;
 }
 
 .produk p {
-    font-size: 14px;
-    font-weight: bold;
-    color: #e60023;
-    margin: 0 0 8px;
+  font-size: 16px; /* Naikin dari 14px */
+  font-weight: bold;
+  color: #e60023;
+  margin: 0 0 8px;
 }
 
 .produk a {
-    margin-top: auto;
-    text-align: center;
-    background: #ee4d2d;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 13px;
+  margin-top: auto;
+  text-align: center;
+  background: #ee4d2d;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px; /* Naikin dari 10px */
+  border-radius: 8px;
+  font-size: 14px; /* Naikin dari 13px */
+  font-weight: 600;
+}
+
+.produk a:hover {
+  background: #d43d1a; /* Tambah hover effect */
 }
 
 /* ========================= PAGINATION ========================= */
 #pagination {
-    margin: 24px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
 #pagination button {
-    padding: 8px 14px;
-    font-size: 13px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background: #fff;
+  padding: 10px 16px; /* Naikin sedikit */
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+#pagination button:hover:not(:disabled) {
+  background: #f5f5f5; /* Tambah hover effect */
 }
 
 #pagination button:disabled {
-    opacity: 0.5;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-/* ========================= TABLET ========================= */
+/* ========================= TABLET - TETAP 2 KOLOM ========================= */
 @media screen and (max-width: 1024px) {
-    #produk-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  #produk-list {
+    grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom */
+    gap: 14px;
+  }
+
+  .produk img {
+    height: 220px; /* Sesuaikan tinggi untuk tablet */
+  }
 }
 
-/* ========================= 🔥 MOBILE HARD LOCK 2 KOLOM (ANTI OVERRIDE) ========================= */
+/* ========================= MOBILE - TETAP 2 KOLOM ========================= */
 @media screen and (max-width: 768px) {
-    body {
-        padding: 14px;
-    }
+  body {
+    padding: 14px;
+  }
 
-    .toolbar {
-        flex-direction: column;
-    }
+  .toolbar {
+    flex-direction: column;
+  }
 
-    #search,
-    #sortHarga {
-        width: 100%;
-    }
+  #search,
+  #sortHarga {
+    width: 100%;
+  }
 
-    /* ⛔ KUNCI TOTAL */
-    #produk-list {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 12px !important;
-        width: 100% !important;
-    }
+  #produk-list {
+    grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom */
+    gap: 12px;
+  }
 
-    .produk img {
-        height: 150px;
-    }
+  .produk img {
+    height: 180px; /* Sesuaikan untuk mobile */
+  }
+
+  .produk h3 {
+    font-size: 13px;
+  }
+
+  .produk p {
+    font-size: 14px;
+  }
 }
 
 /* ========================= EXTRA SMALL (IPHONE MINI) TETAP 2 KOLOM ========================= */
 @media screen and (max-width: 480px) {
-    #produk-list {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
-    }
+  #produk-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 
-    .produk img {
-        height: 135px;
-    }
+  .produk img {
+    height: 150px;
+  }
+
+  .produk h3 {
+    font-size: 12px;
+  }
+
+  .produk p {
+    font-size: 13px;
+  }
+
+  .produk a {
+    padding: 10px;
+    font-size: 13px;
+  }
 }
