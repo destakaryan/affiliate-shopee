@@ -243,3 +243,46 @@ body {
     font-size: 22px;
   }
 }
+
+/* ========================= FILTER KATEGORI ========================= */
+#kategori {
+  flex: 0 1 260px;
+  min-width: 0;
+  padding: 24px;
+  font-size: 28px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.produk-kategori {
+  display: inline-block;
+  align-self: flex-start;
+  margin: 4px 0 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff0e9;
+  color: #a83b1d;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 24px;
+  text-align: center;
+  color: #666;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #kategori {
+    width: 100%;
+    padding: 24px;
+    font-size: 28px;
+  }
+
+  .produk-kategori {
+    font-size: 16px;
+  }
+}
