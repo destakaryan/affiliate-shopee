@@ -1,4 +1,4 @@
-const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vStK3XgnItgaxMcWhYeNqSUnMou7rzFpSfAjVkRXWLVxbGy6YTqncHHTs7UB2mQ8Rhdvk2iUX4gH4bN/pub?gid=0&single=true&output=csv';
+const sheetURL = 'https://docs.google.com/spreadsheets/d/1vSQCXtdyqgRHVFkcjfTBhjHEIj9AMkA0Ii8-3xOqosI/export?format=csv&gid=0';
 
 let allData = [];
 let filteredData = [];
@@ -15,7 +15,7 @@ fetch(sheetURL)
         const rows = parseCSV(csvText).filter(row => row.some(cell => cell.trim()));
         if (!rows.length) throw new Error('Spreadsheet kosong');
 
-        const headers = rows.shift().map(value => value.trim().toLowerCase());
+        const headers = rows.shift().map(value => value.replace(/^\uFEFF/, '').trim().toLowerCase());
         const indexOf = (...names) => headers.findIndex(header => names.includes(header));
         const idIndex = indexOf('id');
         const namaIndex = indexOf('nama_produk', 'nama produk', 'nama');
@@ -153,10 +153,19 @@ function renderProduk() {
         const card = document.createElement('div');
         card.className = 'produk';
 
+        // Gambar juga menjadi tautan menuju link affiliate produk.
+        const imageLink = document.createElement('a');
+        imageLink.className = 'produk-gambar-link';
+        imageLink.href = item.link;
+        imageLink.target = '_blank';
+        imageLink.rel = 'nofollow noopener';
+        imageLink.setAttribute('aria-label', `Lihat ${item.nama} di Shopee`);
+
         const img = document.createElement('img');
         img.src = item.gambar;
         img.loading = 'lazy';
         img.alt = item.nama;
+        imageLink.appendChild(img);
 
         const title = document.createElement('h3');
         title.textContent = item.nama;
@@ -174,7 +183,7 @@ function renderProduk() {
         link.rel = 'nofollow noopener';
         link.textContent = 'Beli di Shopee';
 
-        card.append(img, title, category, price, link);
+        card.append(imageLink, title, category, price, link);
         list.appendChild(card);
     });
 }
