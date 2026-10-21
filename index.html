@@ -5,11 +5,13 @@
     <title>Affiliate Shopee</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 
 <div class="hero">
-    <h1>Produk Rekomendasi</h1>
+    <h1>Produk Rekomendasi</h1> 
         <p class="hero-sub">
             Temukan produk terbaik dengan harga termurah
         </p>
@@ -19,8 +21,12 @@
 <div class="toolbar">
     <input type="text" id="search" placeholder="Cari produk...">
 
+    <select id="kategori">
+        <option value="">Semua kategori</option>
+    </select>
+
     <select id="sortHarga">
-        <option value="">Urutkan</option>
+        <option value="">Urutkan harga</option>
         <option value="asc">Harga Termurah</option>
         <option value="desc">Harga Termahal</option>
     </select>
